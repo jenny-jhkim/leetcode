@@ -1,15 +1,12 @@
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        result = []
-        nums1.sort();
-        nums2.sort();
-        
-        for i, x in enumerate(nums1):
-            for j, y in enumerate(nums2):
-                if x == y :
-                    if result.count(x) == 0 :
-                        result.append(x);
-                    break
+        result = [];
+        setNums1 = set(nums1);
+        setNums2 = set(nums2);
+              
+        for x in setNums2:
+            if x in setNums1:
+                result.append(x);
 
         return result                  
                 
