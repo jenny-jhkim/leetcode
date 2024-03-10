@@ -1,13 +1,11 @@
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
-        result = [x for x in nums if x != val]
-        k = len(result);
-        numEqualTo = len(nums) - k;
+        k = len(nums);
+        k = k - nums.count(val);
 
-        for x in range(numEqualTo): 
-             nums.remove(val);
-                
-        return k;
+        while val in nums:
+             nums.remove(val)
+        return k
                 
             
         
