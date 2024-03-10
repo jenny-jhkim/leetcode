@@ -1,6 +1,8 @@
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         result = []
+        nums1.sort();
+        nums2.sort();
         
         for i, x in enumerate(nums1):
             for j, y in enumerate(nums2):
@@ -8,5 +10,6 @@ class Solution:
                     if result.count(x) == 0 :
                         result.append(x);
                     break
+
         return result                  
                 
