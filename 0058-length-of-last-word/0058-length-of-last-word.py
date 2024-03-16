@@ -1,4 +1,13 @@
 class Solution:
     def lengthOfLastWord(self, s: str) -> int:
-        stringArray = s.split()
-        return len(stringArray[-1])
+        i = len(s)
+        length = 0
+        
+        while i > 0 :
+            i -= 1
+            if s[i] != ' ':
+                length +=1
+            elif length > 0:
+                return length
+            
+        return length
